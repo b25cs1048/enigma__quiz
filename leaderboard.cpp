@@ -38,11 +38,11 @@ void Leaderboard::totalPlayers()
     cout << "Total students : " << countinput << endl;
 }
 
-void  Leaderboard::saveScore(string username,int scoreofstudent,int total)
+void  Leaderboard::saveScore(string username,int scoreofstudent)
 {
     //output  string from file collect
     ofstream file("scores.txt", ios::app); 
-    file << username << " " << correct << " " << total << endl;
+    file << username << " " << scoreofstudent << endl;
 }
 
  void  Leaderboard::showLeaderboard()
@@ -51,11 +51,9 @@ void  Leaderboard::saveScore(string username,int scoreofstudent,int total)
 
     vector <string>  players;
     vector <int> scoresofstudent;
-    vector<int> totalQuestions;
 
     string player;
     int correctQUESTIONS;
-    int correct, total;
 
     while (file >>  player >> correctQUESTIONS)
     {
@@ -63,7 +61,6 @@ void  Leaderboard::saveScore(string username,int scoreofstudent,int total)
 
          players.push_back(player);
         scoresofstudent.push_back(correctQUESTIONS);
-        totalQuestions.push_back(total);
     } 
 // idhar hum bubble sorting kar rahe hai player ke score ko using two for loops
 
@@ -75,7 +72,6 @@ void  Leaderboard::saveScore(string username,int scoreofstudent,int total)
             {
                 swap(scoresofstudent[ab],scoresofstudent[cd]);
                 // if player cd ka score jyada hai to swap karenge
-                swap(totalQuestions[ab], totalQuestions[cd]);
 
                 swap(players[ab],players[cd]);
             }
@@ -99,13 +95,10 @@ void  Leaderboard::saveScore(string username,int scoreofstudent,int total)
          //3rdplace ko bronze colour text dekhayega
 
         else cout << "\033[0m";
-        double percentage = (double)scoresofstudent[ab] / totalQuestions[ab] * 100;
 
         cout << ab + 1 << ". " << players[ab]
 
-             << " Score:  " << scoresofstudent[ab]
-             << "/" << totalQuestions[ab]
-             << " | Percentage: " << percentage << "%" << endl;  // terminal par output dikhayega
+             << " Score:  " << scoresofstudent[ab] << endl; // terminal par output dikhayega
 
         cout <<  "\033[0m";
     }
