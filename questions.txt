@@ -1,0 +1,6 @@
+Which planet in our solar system is known as the "Red Planet"?|Venus|Mars|Jupiter|Saturn|2
+Who is generally considered the inventor of the first practical motor car?|Henry Ford|Karl Benz|Nikola Tesla|Ransom Olds|2
+What is the longest river in the world?|Amazon River|Nile River|Yangtze River|Mississippi River|2
+Which element has the chemical symbol "Au"?|Silver|Copper|Gold|Aluminum|3
+In which city can you find the famous Brandenburg Gate?|Vienna|Zurich|Munich|Berlin|4
+What is my name|a|b|c|d|3
